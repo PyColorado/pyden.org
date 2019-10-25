@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "2ce91853ab17efb657f2adb958440df583574e3310e828f02d529f64aa59f21e"
+            "sha256": "aedb473f3085affbe327326e7076bd7bef1eb068b0d0e01c75fbc3011400cc52"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -194,13 +194,6 @@
                 "sha256:a6be69091dac236ea9c6bc7d012beab42010fa914c459791d627dad4910eb665"
             ],
             "version": "==1.0"
-        },
-        "meetup-api": {
-            "hashes": [
-                "sha256:8c6e0a2e6b46e3379a8318857084dd93e95bdc156a04b71b41ef7b63f4e91887",
-                "sha256:83721e37f066c3faf9494592f9ba7ed4b931e9a1a46768ba2e4b55fb249a69ad"
-            ],
-            "version": "==0.1.1"
         },
         "oauthlib": {
             "hashes": [
