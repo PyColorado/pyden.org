@@ -45,7 +45,7 @@ class TestRoutes:
     def test_index(self, app, client, mocker):
         mocker.patch("meetup.api.Client", new=MockMeetup)
         resp = client.get("/")
-        assert b'<h2 style="color:#fff;">February 13, 2018 06:30PM</h2>' in resp.data
+        assert b'<h1>Upcoming Events</h1>' in resp.data
         assert resp.status_code == 200
 
     def test_submit_get(self, client, mocker):
@@ -93,7 +93,7 @@ class TestRoutes:
         # Now patch with the misbehaved client and make sure we still render.
         mocker.patch("meetup.api.Client", new=MisbehavedMockMeetup)
         resp = client.get("/")
-        assert b'<h2 style="color:#fff;">February 13, 2018 06:30PM</h2>' in resp.data
+        assert b'<h1>Upcoming Events</h1>' in resp.data
         assert resp.status_code == 200
 
     def test_hook_head(self, client, mocker):

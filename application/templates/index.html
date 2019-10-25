@@ -34,6 +34,7 @@
                             data-easing="easeOutBack">
                         </div>
 
+                        {% if upcoming %}
                         <div
                             class="caption sfb tp-resizeme"
                             data-x="0"
@@ -45,6 +46,7 @@
                             <h1>{{ upcoming.name }}</h1>
                             <h2 style="color:#fff;">{{ upcoming.time|convert_ms(upcoming.utc_offset) }}</h2>
                         </div>
+                        {% endif %}
                         <div
                             class="caption sfb tp-resizeme input-box"
                             data-x="0"
@@ -76,6 +78,7 @@
 
 
     <!-- #information-bar -->
+    {% if upcoming %}
     <section id="information-bar">
         <div class="container">
             <div class="row">
@@ -92,6 +95,7 @@
             </div>
         </div>
     </section>
+    {% endif %}
     <!-- /#information-bar -->
 
 
