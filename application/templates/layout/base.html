@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title%}Boulder Python{% endblock %}</title>
+    <title>{% block title%}PyDEN{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="SX2ZPn5EuEwP42ka6OlntzaZB5SMIbxCRs3LzvAmGJ4" />
     <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico')|autoversion }}">
@@ -13,7 +13,7 @@
 
     {% set links = (
         ('HOME', '/'),
-        ('JOIN US', 'https://www.meetup.com/BoulderPython'),
+        ('JOIN US', 'https://www.meetup.com/PyDENCO'),
         ('SUBMIT A TALK', '/submit'))
     %}
 
@@ -23,7 +23,12 @@
             <div class="row">
                 <!-- .logo -->
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 logo">
-                    <a href="/"><img class="img-responsive" src="{{ url_for('static', filename='img/logo.png') }}"></a>
+                    <a href="/" style="color: white; font-size: 48px; display:
+                    block; margin-top: 15px;">
+                        PyDEN
+                        <!-- <img class="img-responsive" src="{{ url_for('static',
+                        filename='img/logo.png') }}"> -->
+                    </a>
                 </div>
                 <!-- /.logo -->
 
@@ -89,9 +94,16 @@
                 <div class="col-lg-4 col-md-4 col-sm-6 footer-widget about-widget" >
                     <h3>ABOUT US</h3>
                     <!-- <img src="img/resources/logo.png" alt="Footer Logo"> -->
-                    <p>We are a group of python developers, scientists, automators, and enthusiasts that gather once a month in Boulder,
-                    Colorado to discuss all things python. We usually meet on the 2nd Tuesday of each month. You can find and engage with
-                    us on&nbsp;<a href='https://www.meetup.com/boulderpython/'>Meetup</a>,&nbsp;<a href='https://twitter.com/boulderpython'>Twitter</a>, and&nbsp;<a href='https://denver-dev-slack.herokuapp.com/'>Slack</a>&nbsp;in the (<a href='https://denver-devs.slack.com/messages/C41FCTDLP/'>#meetup-python</a>) and (<a href='https://denver-devs.slack.com/messages/C040UH1HS/'>#help-python</a>) topics.</p>
+                    <p>
+                        PyDEN is a meetup for Python developers in the Denver Metro Area. We are one of 4 front range python meetups who come together once a year for the PyColorado Conference.
+
+                        We host monthly meetups on Python topics (and
+                        sometimes non-Python topics of interest), and
+                        welcome speakers of all levels to participate and
+                        engage with our community.
+                        
+                        We usually meet on the 3rd Thursday of each month. You can find and engage with
+                    us on&nbsp;<a href='https://www.meetup.com/PyDENCO/'>Meetup</a>,&nbsp;<a href='https://twitter.com/pydenco'>Twitter</a>, and&nbsp;<a href='https://slack.pycolorado.org/'>Slack</a>&nbsp;in the (<a href='https://pycolorado.slack.com/messages/CP88QAMDG/'>#meetup-pyden</a>) topic.</p>
                 </div>
                 <!-- /.footer-widget -->
 
@@ -99,10 +111,10 @@
                 <div class="col-lg-2 col-md-2 col-sm-6 footer-widget menu-widget">
                     <h3>QUICK LINKS</h3>
                     <ul>
-                        <li><a href="https://us.pycon.org/2018/about/code-of-conduct/"><i class="fa fa-angle-right"></i> Code of Conduct</a></li>
-                        <li><a href="https://www.meetup.com/boulderpython/"><i class="fa fa-angle-right"></i> Meetup</a></li>
-                        <li><a href="https://twitter.com/boulderpython"><i class="fa fa-angle-right"></i> Twitter</a></li>
-                        <li><a href="https://github.com/boulder-python"><i class="fa fa-angle-right"></i> GitHub</a></li>
+                        <li><a href="https://pycolorado.org/code-of-conduct/"><i class="fa fa-angle-right"></i> Code of Conduct</a></li>
+                        <li><a href="https://www.meetup.com/PyDENCO/"><i class="fa fa-angle-right"></i> Meetup</a></li>
+                        <li><a href="https://twitter.com/pydenco"><i class="fa fa-angle-right"></i> Twitter</a></li>
+                        <li><a href="https://github.com/pycolorado"><i class="fa fa-angle-right"></i> GitHub</a></li>
                         <li><a href="/privacy"><i class="fa fa-angle-right"></i> Privacy</a></li>
                     </ul>
                 </div>
@@ -127,7 +139,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <p>copyright &copy; 1996-{{ moment().format('YYYY') }} Boulder Python</p>
+                    <p>copyright &copy; 2019-{{ moment().format('YYYY') }} PyDEN</p>
                 </div>
             </div>
         </div>

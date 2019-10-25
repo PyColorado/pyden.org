@@ -241,7 +241,7 @@
         "py-trello": {
             "editable": true,
             "git": "https://github.com/boulder-python/py-trello.git",
-            "ref": "b929721397077f31a06603d7bb7843526d2a926b"
+            "ref": "30794e8e411c2db0611e0b50111663ed7843493c"
         },
         "python-dateutil": {
             "hashes": [

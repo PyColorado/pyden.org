@@ -9,21 +9,20 @@ import os, pathlib
 
 
 class BaseConfig:
-    SITE_NAME = os.environ.get("SITE_NAME", "boulderpython.org")
-    SITE_ADMIN = os.environ.get("SITE_ADMIN", "hi@boulderpython.com")
+    SITE_NAME = os.environ.get("SITE_NAME", "pyden.org")
+    SITE_ADMIN = os.environ.get("SITE_ADMIN", "hi@pyden.org")
     SECRET_KEY = os.environ.get("SECRET_KEY", "shhh_its_secret")
 
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL", "postgresql+psycopg2://localhost/boulderpython")
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL", "postgresql+psycopg2://localhost/pyden")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     CELERY_BROKER_URL = os.environ.get("CLOUDAMQP_URL", "amqp://localhost//")
     CELERY_RESULT_BACKEND = os.environ.get("CLOUDAMQP_URL", "rpc")
 
     SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY", None)
-    SENDGRID_DEFAULT_FROM = "Boulder Python <hi@boulderpython.org>"
+    SENDGRID_DEFAULT_FROM = "PyDEN <hi@pyden.org>"
 
-    MEETUP_KEY = os.environ.get("MEETUP_KEY", None)
-    MEETUP_GROUP = os.environ.get("MEETUP_GROUP", "BoulderPython")
+    MEETUP_GROUP = os.environ.get("MEETUP_GROUP", "PyDENCO")
 
     MAILCHIMP_USERNAME = os.environ.get("MAILCHIMP_USERNAME", None)
     MAILCHIMP_API_KEY = os.environ.get("MAILCHIMP_API_KEY", None)
@@ -32,19 +31,17 @@ class BaseConfig:
     BUGSNAG_API_KEY = os.environ.get("BUGSNAG_API_KEY", None)
 
     TRELLO_API_KEY = os.environ.get("TRELLO_API_KEY", None)
-    TRELLO_API_SECRET = os.environ.get("TRELLO_API_SECRET", None)
-    TRELLO_TOKEN = os.environ.get("TRELLO_TOKEN", None)
-    TRELLO_TOKEN_SECRET = os.environ.get("TRELLO_TOKEN_SECRET", None)
+    TRELLO_API_TOKEN = os.environ.get("TRELLO_API_TOKEN", None)
     TRELLO_ASSIGNEE = os.environ.get("TRELLO_ASSIGNEE", None)
-    TRELLO_HOOK = os.environ.get("TRELLO_HOOK", "https://www.boulderpython.org/trello/hook")
+    TRELLO_HOOK = os.environ.get("TRELLO_HOOK", "https://www.pyden.org/trello/hook")
 
     # These parameters were added begrudgingly to gain access to the Trello card emails using
     # browser emulation.  See tasks.extract_card_email
-    TRELLO_USERNAME = os.environ.get("TRELLO_USERNAME", "hi@boulderpython.org")
+    TRELLO_USERNAME = os.environ.get("TRELLO_USERNAME", "hi@pyden.org")
     TRELLO_PASSWORD = os.environ.get("TRELLO_PASSWORD", None)
 
     # this is public anyway (used in their URLs)
-    TRELLO_BOARD = "wm8hatnW"
+    TRELLO_BOARD = "EuWGVDC4"
 
     # Order is important here!!  When initializing a new board, lists will be arranged according
     # to the order they're listed here.
