@@ -202,14 +202,22 @@ def robots():
 
 @bp.route("/subscribe", methods=["GET", "POST"])
 def subscribe():
-    """Subscribe email address to the Boulder Python newsletter"""
+    """Subscribe email address to the newsletter"""
     data = request.get_json()
     try:
         client = MailChimp(current_app.config.get("MAILCHIMP_USERNAME"), current_app.config.get("MAILCHIMP_API_KEY"))
 
-        client.lists.members.create(
-            current_app.config.get("MAILCHIMP_LIST_ID"), {"email_address": data["email"], "status": "subscribed"}
-        )
+        subscribe_data = {
+            "email_address": data["email"], 
+            "status": "subscribed", 
+        }
+
+        interest_ids = current_app.config.get("MAILCHIMP_INTEREST_IDS", []).split(",")
+
+        if interest_ids:
+            subscribe_data["interests"] = {interest_id: True for interest_id in interest_ids}
+
+        client.lists.members.create(current_app.config.get("MAILCHIMP_LIST_ID"), data=subscribe_data)
 
         return jsonify({"result": "subscribed"})
 

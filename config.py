@@ -27,6 +27,7 @@ class BaseConfig:
     MAILCHIMP_USERNAME = os.environ.get("MAILCHIMP_USERNAME", None)
     MAILCHIMP_API_KEY = os.environ.get("MAILCHIMP_API_KEY", None)
     MAILCHIMP_LIST_ID = os.environ.get("MAILCHIMP_LIST_ID", None)
+    MAILCHIMP_INTEREST_IDS = os.environ.get("MAILCHIMP_INTEREST_IDS", [])
 
     BUGSNAG_API_KEY = os.environ.get("BUGSNAG_API_KEY", None)
 
