@@ -205,7 +205,7 @@ def subscribe():
     """Subscribe email address to the newsletter"""
     data = request.get_json()
     try:
-        client = MailChimp(current_app.config.get("MAILCHIMP_USERNAME"), current_app.config.get("MAILCHIMP_API_KEY"))
+        client = MailChimp(current_app.config.get("MAILCHIMP_API_KEY"))
 
         subscribe_data = {
             "email_address": data["email"], 
