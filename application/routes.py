@@ -9,6 +9,7 @@ from json import JSONDecodeError
 import requests
 from requests.exceptions import HTTPError
 from mailchimp3 import MailChimp
+from mailchimp3.helpers import get_subscriber_hash
 from flask import Blueprint, current_app, jsonify, render_template, request, redirect, url_for
 
 from application.models import Status, Submission, TrelloList
@@ -207,17 +208,16 @@ def subscribe():
     try:
         client = MailChimp(current_app.config.get("MAILCHIMP_API_KEY"))
 
-        subscribe_data = {
-            "email_address": data["email"], 
-            "status": "subscribed", 
-        }
+        subscribe_data = {"email_address": data["email"], "status": "subscribed"}
 
         interest_ids = current_app.config.get("MAILCHIMP_INTEREST_IDS", []).split(",")
 
         if interest_ids:
             subscribe_data["interests"] = {interest_id: True for interest_id in interest_ids}
 
-        client.lists.members.create(current_app.config.get("MAILCHIMP_LIST_ID"), data=subscribe_data)
+        client.lists.members.create_or_update(
+            current_app.config.get("MAILCHIMP_LIST_ID"), get_subscriber_hash(data["email"]), data=subscribe_data
+        )
 
         return jsonify({"result": "subscribed"})
 
