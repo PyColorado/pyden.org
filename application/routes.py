@@ -46,7 +46,7 @@ def index():
         upcoming = events[0]
     except IndexError:
         upcoming = None
-    
+
     return render_template("index.html", group=group, upcoming=upcoming, events=events)
 
 
@@ -72,14 +72,24 @@ def submit():
 
         card = client.new_submissions_list.add_card(
             name=form.data["title"],
-            desc="#DESCRIPTION \n{} \n\n#NOTES \n{}".format(form.data["description"], form.data["notes"]),
+            desc=f"""#DESCRIPTION
+{form.data['description']}
+
+#PITCH
+{form.data['pitch']}""",
             labels=[labels[form.data["format"]], labels[form.data["audience"]]],
-            position="top",
+            position="bottom",
             assign=[current_app.config["TRELLO_ASSIGNEE"]],
         )
 
         submission = Submission().create(
-            title=form.data["title"], email=form.data["email"], card_id=card.id, card_url=card.url
+            title=form.data["title"],
+            email=form.data["email"],
+            card_id=card.id,
+            card_url=card.url,
+            description=form.data["description"],
+            pitch=form.data["pitch"],
+            notes=form.data["notes"],
         )
 
         # message Celery to create the webhook
