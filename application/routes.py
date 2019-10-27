@@ -208,7 +208,7 @@ def subscribe():
     try:
         client = MailChimp(current_app.config.get("MAILCHIMP_API_KEY"))
 
-        subscribe_data = {"email_address": data["email"], "status": "subscribed"}
+        subscribe_data = {"email_address": data["email"], "status_if_new": "subscribed"}
 
         interest_ids = current_app.config.get("MAILCHIMP_INTEREST_IDS", []).split(",")
 
