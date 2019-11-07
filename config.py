@@ -68,7 +68,7 @@ class BaseConfig:
 
 
 class DefaultConfig(BaseConfig):
-    DEBUG = os.environ.get("DEBUG", True)
+    DEBUG = os.environ.get("DEBUG", "true").lower() == "true"
 
     CACHE_TYPE = "simple"
 

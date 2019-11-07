@@ -8,7 +8,7 @@ import os
 
 import pytz
 from flask import Flask
-from flask_talisman import Talisman
+from flask_talisman import Talisman, GOOGLE_CSP_POLICY
 import bugsnag.flask
 import dotenv
 dotenv.load_dotenv()
@@ -42,7 +42,7 @@ def configure(app, config_name):
     celery.init_app(app)
 
     # Force https
-    Talisman(app)
+    Talisman(app, content_security_policy=GOOGLE_CSP_POLICY)
 
     if selected_config.BUGSNAG_API_KEY:
         # Configure Bugsnag
