@@ -45,6 +45,7 @@ def configure(app, config_name):
     # Force https
     csp = copy.deepcopy(GOOGLE_CSP_POLICY)
     csp["style-src"] += " 'unsafe-inline'"
+    csp["style-src"] += " platform.twitter.com"
     csp["frame-src"] += " platform.twitter.com"
     csp["script-src"] += " platform.twitter.com"
     csp["script-src"] += " cdnjs.cloudflare.com"
@@ -52,7 +53,8 @@ def configure(app, config_name):
     csp["script-src"] += " 'unsafe-inline' 'unsafe-eval'"
     csp["img-src"] = csp["default-src"]
     csp["img-src"] += "  www.google-analytics.com"
-    csp["img-src"] += " syndication.twitter.com"
+    csp["img-src"] += " *.twitter.com"
+    csp["img-src"] += " pbs.twimg.com"
 
     Talisman(app, content_security_policy=csp)
 
