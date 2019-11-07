@@ -8,6 +8,7 @@ import os
 
 import pytz
 from flask import Flask
+from flask_talisman import Talisman
 import bugsnag.flask
 
 from config import config
@@ -38,6 +39,9 @@ def configure(app, config_name):
     cache.init_app(app)
     moment.init_app(app)
     celery.init_app(app)
+
+    # Force https
+    Talisman(app)
 
     if selected_config.BUGSNAG_API_KEY:
         # Configure Bugsnag
