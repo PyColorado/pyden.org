@@ -48,8 +48,10 @@ def configure(app, config_name):
     csp["frame-src"] += " platform.twitter.com"
     csp["script-src"] += " platform.twitter.com"
     csp["script-src"] += " cdnjs.cloudflare.com"
-    csp["script-src"] += " 'unsafe-inline'"
-    
+    csp["script-src"] += " 'unsafe-inline' 'unsafe-eval'"
+    csp["image-src"] = csp["default-src"]
+    csp["image-src"] += "  www.google-analytics.com"
+
     Talisman(app, content_security_policy=csp)
 
     if selected_config.BUGSNAG_API_KEY:
