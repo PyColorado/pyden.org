@@ -47,6 +47,7 @@ def configure(app, config_name):
     csp["style-src"] += " 'unsafe-inline'"
     csp["script-src"] += " platform.twitter.com"
     csp["script-src"] += " cdnjs.cloudflare.com"
+    csp["script-src"] += " 'unsafe-inline'"
     Talisman(app, content_security_policy=csp)
 
     if selected_config.BUGSNAG_API_KEY:
