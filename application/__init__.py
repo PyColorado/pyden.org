@@ -44,7 +44,7 @@ def configure(app, config_name):
 
     # Force https
     csp = copy.deepcopy(GOOGLE_CSP_POLICY)
-    csp["stype-src"].append("unsafe-inline")
+    csp["style-src"].append("unsafe-inline")
     csp["script-src"].append("platform.twitter.com")
     csp["script-src"].append("cdnjs.cloudflare.com")
     Talisman(app, content_security_policy=csp)
