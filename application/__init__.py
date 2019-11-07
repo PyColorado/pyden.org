@@ -44,9 +44,9 @@ def configure(app, config_name):
 
     # Force https
     csp = copy.deepcopy(GOOGLE_CSP_POLICY)
-    csp["style-src"] += "'unsafe-inline' "
-    csp["script-src"] += "platform.twitter.com "
-    csp["script-src"] += "cdnjs.cloudflare.com "
+    csp["style-src"] += " 'unsafe-inline'"
+    csp["script-src"] += " platform.twitter.com"
+    csp["script-src"] += " cdnjs.cloudflare.com"
     Talisman(app, content_security_policy=csp)
 
     if selected_config.BUGSNAG_API_KEY:
