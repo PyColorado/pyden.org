@@ -48,9 +48,11 @@ def configure(app, config_name):
     csp["frame-src"] += " platform.twitter.com"
     csp["script-src"] += " platform.twitter.com"
     csp["script-src"] += " cdnjs.cloudflare.com"
+    csp["script-src"] += " cdn.syndication.twimg.com"
     csp["script-src"] += " 'unsafe-inline' 'unsafe-eval'"
-    csp["image-src"] = csp["default-src"]
-    csp["image-src"] += "  www.google-analytics.com"
+    csp["img-src"] = csp["default-src"]
+    csp["img-src"] += "  www.google-analytics.com"
+    csp["img-src"] += " syndication.twitter.com"
 
     Talisman(app, content_security_policy=csp)
 
