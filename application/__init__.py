@@ -5,6 +5,7 @@
     flask application entrypoint
 """
 import os
+import copy
 
 import pytz
 from flask import Flask
@@ -42,7 +43,11 @@ def configure(app, config_name):
     celery.init_app(app)
 
     # Force https
-    Talisman(app, content_security_policy=GOOGLE_CSP_POLICY)
+    csp = copy.deepcopy(GOOGLE_CSP_POLICY)
+    csp["stype-src"].append("unsafe-inline")
+    csp["script-src"].append("platform.twitter.com")
+    csp["script-src"].append("cdnjs.cloudflare.com")
+    Talisman(app, content_security_policy=csp)
 
     if selected_config.BUGSNAG_API_KEY:
         # Configure Bugsnag
