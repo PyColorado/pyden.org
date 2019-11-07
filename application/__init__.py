@@ -46,6 +46,7 @@ def configure(app, config_name):
     csp = copy.deepcopy(GOOGLE_CSP_POLICY)
     csp["style-src"] += " 'unsafe-inline'"
     csp["style-src"] += " platform.twitter.com"
+    csp["style-src"] += " *.twimg.com"
     csp["frame-src"] += " platform.twitter.com"
     csp["script-src"] += " platform.twitter.com"
     csp["script-src"] += " cdnjs.cloudflare.com"
@@ -54,7 +55,8 @@ def configure(app, config_name):
     csp["img-src"] = csp["default-src"]
     csp["img-src"] += "  www.google-analytics.com"
     csp["img-src"] += " *.twitter.com"
-    csp["img-src"] += " pbs.twimg.com"
+    csp["img-src"] += " *.twimg.com"
+    csp["img-src"] += " data:"
 
     Talisman(app, content_security_policy=csp)
 
