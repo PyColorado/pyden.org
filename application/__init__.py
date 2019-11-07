@@ -10,7 +10,8 @@ import pytz
 from flask import Flask
 from flask_talisman import Talisman
 import bugsnag.flask
-
+import dotenv
+dotenv.load_dotenv()
 from config import config
 from application.extensions import db, migrate, cache, moment, celery
 from application.filters import autoversion, current_route, markdown
