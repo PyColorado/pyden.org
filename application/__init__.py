@@ -47,7 +47,7 @@ def configure(app, config_name):
     csp["style-src"] += " 'unsafe-inline'"
     csp["style-src"] += " platform.twitter.com"
     csp["style-src"] += " *.twimg.com"
-    csp["frame-src"] += " platform.twitter.com"
+    csp["frame-src"] += " *.twitter.com"
     csp["script-src"] += " platform.twitter.com"
     csp["script-src"] += " cdnjs.cloudflare.com"
     csp["script-src"] += " cdn.syndication.twimg.com"
