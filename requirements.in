@@ -16,3 +16,4 @@ mailchimp3
 markdown2
 psycopg2-binary
 python-dotenv
+sendgrid
