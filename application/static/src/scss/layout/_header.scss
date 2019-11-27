@@ -2,15 +2,14 @@
  * header styles
  */
 
-
- header {
+header {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
   width: 100%;
   .logo {
-    padding-top: 40px;
+    padding-top: 20px;
     transition: all 0.3s ease-out;
   }
   &.header-fixed {
@@ -25,7 +24,7 @@
       line-height: 94px;
     }
     .logo {
-      padding-top: 20px;
+      padding-top: 0;
     }
   }
   .container {
@@ -33,7 +32,7 @@
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
     &:after {
-      content: '';
+      content: "";
       width: 100%;
       height: 1px;
       position: absolute;
@@ -50,10 +49,10 @@
   width: 35px;
   cursor: pointer;
   z-index: 100;
-  -webkit-transition: opacity .25s ease;
-  transition: opacity .25s ease;
+  -webkit-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
   &:hover {
-    opacity: .7;
+    opacity: 0.7;
   }
   &.active {
     .top {
@@ -79,8 +78,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    -webkit-transition: all .35s ease;
-    transition: all .35s ease;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
     cursor: pointer;
     &:nth-of-type(2) {
       top: 11px;
@@ -93,36 +92,36 @@
 
 .navoverlay {
   position: fixed;
-  background: #1D2671;
+  background: #1d2671;
   top: 0;
   left: 0;
   width: 100%;
   height: 0%;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: opacity .35s, visibility .35s, height .35s;
-  transition: opacity .35s, visibility .35s, height .35s;
+  -webkit-transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
   overflow: hidden;
   &.open {
-    opacity: .9;
+    opacity: 0.9;
     visibility: visible;
     height: 100%;
     li {
-      -webkit-animation: fadeInRight .5s ease forwards;
-      animation: fadeInRight .5s ease forwards;
-      -webkit-animation-delay: .35s;
-      animation-delay: .35s;
+      -webkit-animation: fadeInRight 0.5s ease forwards;
+      animation: fadeInRight 0.5s ease forwards;
+      -webkit-animation-delay: 0.35s;
+      animation-delay: 0.35s;
       &:nth-of-type(2) {
-        -webkit-animation-delay: .4s;
-        animation-delay: .4s;
+        -webkit-animation-delay: 0.4s;
+        animation-delay: 0.4s;
       }
       &:nth-of-type(3) {
-        -webkit-animation-delay: .45s;
-        animation-delay: .45s;
+        -webkit-animation-delay: 0.45s;
+        animation-delay: 0.45s;
       }
       &:nth-of-type(4) {
-        -webkit-animation-delay: .50s;
-        animation-delay: .50s;
+        -webkit-animation-delay: 0.5s;
+        animation-delay: 0.5s;
       }
     }
   }
@@ -157,11 +156,13 @@
         text-decoration: none;
         overflow: hidden;
         padding-bottom: 20px;
-        &:hover:after, &:focus:after, &:active:after {
+        &:hover:after,
+        &:focus:after,
+        &:active:after {
           width: 100%;
         }
         &:after {
-          content: '';
+          content: "";
           position: absolute;
           bottom: 0;
           left: 50%;
@@ -170,8 +171,8 @@
           transform: translateX(-50%);
           height: 3px;
           background: $white;
-          -webkit-transition: .35s;
-          transition: .35s;
+          -webkit-transition: 0.35s;
+          transition: 0.35s;
         }
       }
     }
@@ -190,7 +191,6 @@
   }
 }
 
-
 @keyframes fadeInRight {
   0% {
     opacity: 0;
@@ -203,13 +203,13 @@
   }
 }
 
-
 header .mainmenu-container {
   .nav-toggler {
     display: none;
   }
   li {
-    &.nav-closer, &.dropdown > a .fa {
+    &.nav-closer,
+    &.dropdown > a .fa {
       display: none;
     }
   }
@@ -258,16 +258,16 @@ header .mainmenu-container {
           overflow: hidden;
           line-height: 36px;
           &.dropdown:after {
-            content: '\f0da';
-            font-family: 'FontAwesome';
+            content: "\f0da";
+            font-family: "FontAwesome";
             color: $accent1;
             position: absolute;
             right: 10px;
             top: 0px;
           }
           &:before {
-            content: '\f105';
-            font-family: 'FontAwesome';
+            content: "\f105";
+            font-family: "FontAwesome";
             color: $accent1;
             position: absolute;
             left: 10px;
@@ -281,7 +281,7 @@ header .mainmenu-container {
             font-weight: 600;
             font-size: 13px;
             text-transform: uppercase;
-            transition: all .3s ease;
+            transition: all 0.3s ease;
             &:hover {
               color: $accent1;
             }
@@ -311,8 +311,8 @@ header .mainmenu-container {
               position: relative;
               line-height: 36px;
               &:before {
-                content: '\f105';
-                font-family: 'FontAwesome';
+                content: "\f105";
+                font-family: "FontAwesome";
                 color: $accent1;
                 position: absolute;
                 left: 10px;
@@ -326,7 +326,7 @@ header .mainmenu-container {
                 font-weight: 600;
                 font-size: 13px;
                 text-transform: uppercase;
-                transition: all .3s ease;
+                transition: all 0.3s ease;
                 &:hover {
                   color: $accent1;
                 }

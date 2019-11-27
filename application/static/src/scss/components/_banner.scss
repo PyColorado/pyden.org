@@ -24,11 +24,11 @@
   .slotholder {
     position: relative;
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
-      opacity: .96;
+      opacity: 0.96;
       width: 100%;
       height: 100%;
       background: $left;
@@ -92,7 +92,7 @@
         color: $white;
         padding: 0 43px;
         text-transform: uppercase;
-        transition: all .3s ease;
+        transition: all 0.3s ease;
         &.bordered {
           border-color: $white;
           &:before {
@@ -126,7 +126,8 @@
         border-radius: 5px;
         margin-right: 20px;
         &:hover {
-          color: $accent1;
+          background-color: $primary;
+          border-color: $primary;
         }
         &:before {
           background: $white;
