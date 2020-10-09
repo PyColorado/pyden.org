@@ -54,6 +54,7 @@ def configure(app, config_name):
         csp["script-src"] += " platform.twitter.com"
         csp["script-src"] += " cdnjs.cloudflare.com"
         csp["script-src"] += " cdn.syndication.twimg.com"
+        csp["script-src"] += " *.gstatic.com"
         csp["script-src"] += " 'unsafe-inline' 'unsafe-eval'"
         csp["default-src"] += " *.google-analytics.com"
         csp["img-src"] = csp["default-src"]
