@@ -67,6 +67,9 @@ class BaseConfig:
         },
     }
 
+    RECAPTCHA_PUBLIC_KEY = os.environ.get("RECAPTCHA_PUBLIC_KEY", None)
+    RECAPTCHA_PRIVATE_KEY = os.environ.get("RECAPTCHA_PRIVATE_KEY", None)
+
 
 class DefaultConfig(BaseConfig):
     DEBUG = os.environ.get("DEBUG", "true").lower() == "true"
@@ -91,7 +94,7 @@ class TestConfig(BaseConfig):
 
     RECAPTCHA_PUBLIC_KEY = str(uuid4()).replace("-", "")
     RECAPTCHA_PRIVATE_KEY = str(uuid4()).replace("-", "")
-
+    
     SSL_ENABLE = False
     TEST_DB_PATH = os.path.join(pathlib.Path(__file__).parent, "tests/")
     TEST_DB_FILENAME = "test.db"
