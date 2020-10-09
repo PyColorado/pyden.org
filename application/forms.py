@@ -7,6 +7,7 @@
 
 from flask_wtf import FlaskForm
 from wtforms import TextField, TextAreaField, SelectField
+from flask_wtf.recaptcha import RecaptchaField
 from wtforms.fields.html5 import EmailField
 from wtforms.validators import InputRequired, Email
 
@@ -55,3 +56,4 @@ class SubmissionForm(FlaskForm):
         "Description", validators=[InputRequired("Field is required.")], render_kw={"placeholder": descPlaceholder}
     )
     notes = TextAreaField("Notes", render_kw={"placeholder": notesPlaceholder})
+    recaptcha = RecaptchaField()

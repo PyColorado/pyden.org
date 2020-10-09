@@ -6,6 +6,7 @@
 """
 
 import os, pathlib
+from uuid import uuid4
 
 
 class BaseConfig:
@@ -74,7 +75,7 @@ class DefaultConfig(BaseConfig):
 
     GOOGLE_ANALYTICS_ID = os.environ.get("GOOGLE_ANALYTICS_ID", "UA-123456-78")
 
-    SSL_DISABLE = True
+    SSL_ENABLE = True
     MAIL_SERVER = "smtp.sendgrid.com"
     MAIL_PORT = 587
     MAIL_USE_TLS = True
@@ -88,6 +89,10 @@ class TestConfig(BaseConfig):
     DEBUG = True
     TESTING = True
 
+    RECAPTCHA_PUBLIC_KEY = str(uuid4()).replace("-", "")
+    RECAPTCHA_PRIVATE_KEY = str(uuid4()).replace("-", "")
+
+    SSL_ENABLE = False
     TEST_DB_PATH = os.path.join(pathlib.Path(__file__).parent, "tests/")
     TEST_DB_FILENAME = "test.db"
     TEST_DB = TEST_DB_PATH + TEST_DB_FILENAME
